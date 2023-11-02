@@ -8,12 +8,11 @@ AWS Network Firewall で アウトバウンド通信をドメインのホワイ�
 
 ### 一般的なアーキテクチャ
 
-![architecture](/images/architecture1.png)
+![normal architecture](/images/architecture1.png)
 
 ### 本コードで実現するアーキテクチャ
 
-![architecture](/images/architecture2.png)
-
+![my architecture](/images/architecture2.png)
 
 ## 使い方
 
