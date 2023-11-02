@@ -18,7 +18,7 @@ AWS Network Firewall を用いてドメインのホワイトリスト形式で�
 
 ```bash
 git clone https://github.com/teradatky/aws-network-firewall-sample.git
-cd aws-networkfirewall-sample
+cd aws-network-firewall-sample
 cd environments/dev
 
 terraform init
