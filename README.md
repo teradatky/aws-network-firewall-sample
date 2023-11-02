@@ -1,4 +1,4 @@
-# aws-networkfirewall-sample
+# aws-network-firewall-sample
 
 AWS Network Firewall で アウトバウンド通信をドメインのホワイトリスト形式で行うサンプルです。
 
@@ -17,7 +17,7 @@ AWS Network Firewall で アウトバウンド通信をドメインのホワイ�
 ## 使い方
 
 ```bash
-git clone https://github.com/teradatky/aws-networkfirewall-sample.git
+git clone https://github.com/teradatky/aws-network-firewall-sample.git
 cd aws-networkfirewall-sample
 cd environments/dev
 
