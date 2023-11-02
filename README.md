@@ -2,11 +2,18 @@
 
 AWS Network Firewall で アウトバウンド通信をドメインのホワイトリスト形式で行うサンプルです。
 
-[解説記事](https://example.com)
+[解説記事](https://zenn.dev/teradatky)
 
 ## 構成図
 
-![architecture](/images/architecture.png)
+### 一般的な想定アーキテクチャ
+
+![architecture](/images/architecture1.png)
+
+### 本コードで実現するアーキテクチャ
+
+![architecture](/images/architecture2.png)
+
 
 ## 使い方
 
