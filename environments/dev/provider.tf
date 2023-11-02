@@ -12,7 +12,7 @@ provider "aws" {
   region = "ap-northeast-1"
   default_tags {
     tags = {
-      repo = "aws-networkfirewall-sample"
+      repo = "aws-network-firewall-sample"
       env  = "dev"
     }
   }
