@@ -6,7 +6,7 @@ AWS Network Firewall で アウトバウンド通信をドメインのホワイ�
 
 ## 構成図
 
-サンプル画像を後で貼る。
+![architecture](/images/architecture.png)
 
 ## 使い方
 
