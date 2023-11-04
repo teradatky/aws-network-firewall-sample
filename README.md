@@ -62,7 +62,7 @@ curl -s -v --sslv3 -m 5 https://yahoo.co.jp 1> /dev/null
     │   ├── outputs.tf
     │   ├── security_group.tf
     │   └── variables.tf
-    └── network-firewall
+    └── network_firewall
         ├── cloudwatch.tf
         ├── firewall.tf
         ├── outputs.tf
