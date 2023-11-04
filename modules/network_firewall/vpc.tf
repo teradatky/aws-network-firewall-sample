@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 # firewall subnet
 resource "aws_subnet" "firewall" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.firewall_subnet1a_cidr
+  cidr_block              = var.firewall_subnet_cidr
   availability_zone       = "ap-northeast-1a"
   map_public_ip_on_launch = true
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "firewall" {
 # public subnet
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.public_subnet1a_cidr
+  cidr_block              = var.public_subnet_cidr
   availability_zone       = "ap-northeast-1a"
   map_public_ip_on_launch = true
 
@@ -58,7 +58,7 @@ resource "aws_route_table" "ingress" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block      = var.public_subnet1a_cidr
+    cidr_block      = var.public_subnet_cidr
     vpc_endpoint_id = tolist(aws_networkfirewall_firewall.main.firewall_status[0].sync_states)[0].attachment[0].endpoint_id
   }
 

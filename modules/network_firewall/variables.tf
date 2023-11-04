@@ -8,12 +8,12 @@ variable "vpc_cidr" {
   description = "vpc cidr"
 }
 
-variable "firewall_subnet1a_cidr" {
+variable "firewall_subnet_cidr" {
   type        = string
   description = "subnet cidr"
 }
 
-variable "public_subnet1a_cidr" {
+variable "public_subnet_cidr" {
   type        = string
   description = "subnet cidr"
 }
