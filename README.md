@@ -2,7 +2,7 @@
 
 AWS Network Firewall を用いてドメインのホワイトリスト形式で通信制御を行うサンプル。
 
-[解説記事はこちら](https://zenn.dev/teradatky)
+[解説記事はこちら](https://zenn.dev/teradatky/articles/network-firewall-domain-whitelist-20231105)
 
 ## 構成図
 
@@ -28,7 +28,7 @@ terraform apply
 
 ## 動作確認
 
-1. マネジメントコンソールからセッションマネージャーで EC2 に接続 ※要 IAM ロール
+1. マネジメントコンソールからセッションマネージャーで EC2 に接続
 1. 以下コマンドを実行
 
 ```bash
