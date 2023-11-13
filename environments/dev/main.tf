@@ -8,9 +8,8 @@ module "network_firewall" {
 }
 
 module "ec2" {
-  source           = "../../modules/ec2"
-  name             = "dev-nfw"
-  vpc_id           = module.network_firewall.vpc_id
-  subnet_id        = module.network_firewall.public_subnet_id
-  instance_profile = "terada-admin-role"
+  source    = "../../modules/ec2"
+  name      = "dev-nfw"
+  vpc_id    = module.network_firewall.vpc_id
+  subnet_id = module.network_firewall.public_subnet_id
 }

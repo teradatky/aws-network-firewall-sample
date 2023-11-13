@@ -2,7 +2,7 @@
 
 AWS Network Firewall を用いてドメインのホワイトリスト形式で通信制御を行うサンプル。
 
-[解説記事](https://zenn.dev/teradatky)
+[解説記事はこちら](https://zenn.dev/teradatky)
 
 ## 構成図
 
@@ -59,6 +59,7 @@ curl -s -v --sslv3 -m 5 https://yahoo.co.jp 1> /dev/null
 └── modules
     ├── ec2
     │   ├── ec2.tf
+    │   ├── iam.tf
     │   ├── outputs.tf
     │   ├── security_group.tf
     │   └── variables.tf

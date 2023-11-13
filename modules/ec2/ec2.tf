@@ -1,3 +1,7 @@
+locals {
+  instance_profile = var.instance_profile != null ? var.instance_profile : aws_iam_instance_profile.instance.name
+}
+
 data "aws_ami" "main" {
   most_recent = true
   owners      = ["amazon"]
@@ -7,7 +11,7 @@ data "aws_ami" "main" {
   }
   filter {
     name   = "name"
-    values = ["al2023-ami-2023*"]
+    values = ["al2023-ami-202*"]
   }
 }
 
@@ -17,7 +21,7 @@ resource "aws_instance" "main" {
   subnet_id              = var.subnet_id
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.main.id]
-  iam_instance_profile   = var.instance_profile
+  iam_instance_profile   = local.instance_profile
 
   root_block_device {
     volume_type = "gp3"
