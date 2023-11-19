@@ -74,5 +74,3 @@ resource "aws_networkfirewall_logging_configuration" "main" {
 
   }
 }
-
-
