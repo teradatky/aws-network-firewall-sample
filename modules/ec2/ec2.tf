@@ -29,7 +29,7 @@ resource "aws_instance" "main" {
   }
 
   tags = {
-    Name = join("-", [var.name, "ec2"])
+    Name = join("-", [var.env, var.name, "ec2"])
   }
 
 }

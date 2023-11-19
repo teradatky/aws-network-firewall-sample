@@ -1,5 +1,5 @@
 resource "aws_security_group" "main" {
-  name        = join("-", [var.name, "sg"])
+  name        = join("-", [var.env, var.name, "sg"])
   description = "security group for EC2"
   vpc_id      = var.vpc_id
 
@@ -19,6 +19,6 @@ resource "aws_security_group" "main" {
   }
 
   tags = {
-    Name = join("-", [var.name, "sg"])
+    Name = join("-", [var.env, var.name, "sg"])
   }
 }

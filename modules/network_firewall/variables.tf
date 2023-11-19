@@ -3,6 +3,11 @@ variable "name" {
   description = "prefix of each resources"
 }
 
+variable "env" {
+  type        = string
+  description = "prefix of environment"
+}
+
 variable "vpc_cidr" {
   type        = string
   description = "vpc cidr"

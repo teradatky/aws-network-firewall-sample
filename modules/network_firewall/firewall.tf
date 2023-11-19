@@ -1,6 +1,6 @@
 # firewall
 resource "aws_networkfirewall_firewall" "main" {
-  name                = join("-", [var.name, "firewall"])
+  name                = join("-", [var.env, var.name, "firewall"])
   firewall_policy_arn = aws_networkfirewall_firewall_policy.main.arn
   vpc_id              = aws_vpc.main.id
   subnet_mapping {
@@ -8,13 +8,13 @@ resource "aws_networkfirewall_firewall" "main" {
   }
 
   tags = {
-    Name = join("-", [var.name, "firewall"])
+    Name = join("-", [var.env, var.name, "firewall"])
   }
 }
 
 # firewall policy
 resource "aws_networkfirewall_firewall_policy" "main" {
-  name = join("-", [var.name, "policy"])
+  name = join("-", [var.env, var.name, "policy"])
 
   firewall_policy {
     stateless_default_actions          = ["aws:forward_to_sfe"]
@@ -25,14 +25,14 @@ resource "aws_networkfirewall_firewall_policy" "main" {
   }
 
   tags = {
-    Name = join("-", [var.name, "policy"])
+    Name = join("-", [var.env, var.name, "policy"])
   }
 }
 
 # rule group
 resource "aws_networkfirewall_rule_group" "main" {
   capacity = 100
-  name     = join("-", [var.name, "rule"])
+  name     = join("-", [var.env, var.name, "rule"])
   type     = "STATEFUL"
   rule_group {
     rules_source {
@@ -45,7 +45,7 @@ resource "aws_networkfirewall_rule_group" "main" {
   }
 
   tags = {
-    Name = join("-", [var.name, "rule"])
+    Name = join("-", [var.env, var.name, "rule"])
   }
 }
 

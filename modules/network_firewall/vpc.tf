@@ -4,7 +4,7 @@ resource "aws_vpc" "main" {
   instance_tenancy = "default"
 
   tags = {
-    Name = join("-", [var.name, "vpc"])
+    Name = join("-", [var.env, var.name, "vpc"])
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "firewall" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = join("-", [var.name, "firewall-subnet-1a"])
+    Name = join("-", [var.env, var.name, "firewall-subnet-1a"])
   }
 }
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = join("-", [var.name, "public-subnet-1a"])
+    Name = join("-", [var.env, var.name, "public-subnet-1a"])
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = join("-", [var.name, "igw"])
+    Name = join("-", [var.env, var.name, "igw"])
   }
 }
 
@@ -49,7 +49,7 @@ resource "aws_default_route_table" "main" {
   default_route_table_id = aws_vpc.main.main_route_table_id
 
   tags = {
-    Name = join("-", [var.name, "main-rtb"])
+    Name = join("-", [var.env, var.name, "main-rtb"])
   }
 }
 
@@ -63,7 +63,7 @@ resource "aws_route_table" "ingress" {
   }
 
   tags = {
-    Name = join("-", [var.name, "ingress-rtb"])
+    Name = join("-", [var.env, var.name, "ingress-rtb"])
   }
 }
 
@@ -77,7 +77,7 @@ resource "aws_route_table" "firewall" {
   }
 
   tags = {
-    Name = join("-", [var.name, "firewall-rtb"])
+    Name = join("-", [var.env, var.name, "firewall-rtb"])
   }
 }
 
@@ -91,7 +91,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = join("-", [var.name, "public-rtb"])
+    Name = join("-", [var.env, var.name, "public-rtb"])
   }
 }
 
